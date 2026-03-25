@@ -1,7 +1,7 @@
+### Intention Pulse Transfer Protocol (IPTP) is a protocol released from IntentixLab, developing IntentionSpace :-  
+
 # IPTP Pipe (TCP + framing + checksum + optional protocol ACK + multiplexing)
 
-### IPTP is a protocol released from IntentixLab, developing IntentionSpace :- Intention Pulse Transfer Protocol 
-# IPTP Pipe
 
 A minimal TCP protocol where each message is:
 → Intention + Pulse set
