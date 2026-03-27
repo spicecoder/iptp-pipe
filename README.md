@@ -1,11 +1,22 @@
+### Intention Pulse Transfer Protocol (IPTP) is a protocol released from IntentixLab, developing IntentionSpace :-  
+
 # IPTP Pipe (TCP + framing + checksum + optional protocol ACK + multiplexing)
 
+
+A minimal TCP protocol where each message is:
+→ Intention + Pulse set
+
+Includes:
+- framing
+- checksum
+- protocol ACK (structural only)
+- multiplexing over a single connection
 IPTP Pipe transports **one Signal per envelope**, where a Signal is:
 
 > **Intention + Pulse set**
 
 This repo keeps IPTP independent of Intention Space.
-It does **not** evaluate field state, gate conditions, or design-time rules.
+It does **not** evaluate field state, gate conditions, or design-time rules ,implied in Intention Space. 
 
 ## What this version adds
 
@@ -14,7 +25,8 @@ It does **not** evaluate field state, gate conditions, or design-time rules.
 - optional `RequireProtocolAck`
 - multiplexed in-flight sends over one TCP connection
 - async ACK/NACK correlation by `Envelope.ID`
-
+- 
+This repo includes a working Go implementation with sender/receiver demos
 ## Repo layout
 
 ```text
@@ -109,7 +121,7 @@ NACK:
 }
 ```
 
-## Why multiplexing still fits the model
+## How multiplexing fits the model
 
 Multiplexing does **not** change IPTP semantics because:
 
@@ -119,4 +131,6 @@ Multiplexing does **not** change IPTP semantics because:
 - interpretation remains outside IPTP
 
 So one connection may carry many complete semantic units, but IPTP never merges intentions.
-# iptp-pipe
+### Learn More about Intention Space from Intentix Lab:
+
+https://intentixlab.com
